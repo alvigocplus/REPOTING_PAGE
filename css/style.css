@@ -1,0 +1,231 @@
+/* === Fondo animado del sitio === */
+body {
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  display: flex; /* Usamos flex para organizar el contenido */
+  justify-content: center; /* Centra horizontalmente el contenido principal */
+  background: url('../img/background.jpeg') center/cover no-repeat fixed;
+  /* Usa la imagen background.jpeg, centrada, que cubra toda la pantalla, fija al fondo */
+  animation: gradientBG 15s ease infinite;
+  /* Activa la animación definida más abajo */
+  overflow: hidden; /* Evita que aparezcan barras de scroll */
+  color: white; /* Texto blanco para contraste */
+  font-family: 'Poppins', sans-serif; /* Fuente moderna y legible */
+}
+
+/* === Animación del fondo === */
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 20% 50%;}
+  100% {background-position: 0% 50%;}
+}
+/* Mueve el fondo horizontalmente para crear un efecto animado */
+
+/* === Sidebar lateral === */
+.sidebar {
+  position: fixed; /* Fijo en la pantalla */
+  top: 0; /* Alineado al borde superior */
+  left: 0; /* Alineado al borde izquierdo */
+  width: 230px; /* Ancho del panel */
+  height: 100vh; /* Ocupa toda la altura */
+  background: rgba(0, 0, 0, 0.8); /* Fondo negro semitransparente */
+  backdrop-filter: blur(10px); /* Efecto borroso elegante */
+  padding-top: 30px; /* Espacio superior */
+  z-index: 10; /* Se superpone al fondo */
+  display: flex; /* Contenedor flexible */
+  flex-direction: column; /* Los elementos se apilan verticalmente */
+  align-items: center; /* Centra horizontalmente los elementos */
+}
+
+.logo {
+  font-size: 22px; /* Tamaño del texto del logo */
+  font-weight: 600; /* Negrita */
+  margin-bottom: 40px; /* Espacio debajo del logo */
+}
+
+.menu {
+  list-style: none; /* Elimina los puntos de lista */
+  padding: 0; /* Elimina padding interno */
+  width: 100%; /* Ocupa todo el ancho del sidebar */
+}
+
+.menu li {
+  width: 100%;
+}
+
+.menu a {
+  display: flex; /* Alinea icono + texto en línea */
+  align-items: center;
+  gap: 10px; /* Espacio entre icono y texto */
+  padding: 15px 25px; /* Espaciado interno */
+  color: #fff; /* Texto blanco */
+  text-decoration: none; /* Quita el subrayado */
+  transition: 0.3s; /* Transición suave al hacer hover */
+}
+
+.menu a:hover {
+  background: rgba(255, 255, 255, 0.2); /* Efecto al pasar el mouse */
+}
+
+/* === Contenido principal === */
+/* === Contenido principal === */
+.content {
+  margin-left: 250px; /* deja espacio al sidebar */
+  padding: 60px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* mantiene todo alineado a la izquierda */
+  justify-content: flex-start;
+  min-height: 100vh;
+}
+
+/* === Bloque del título y subtítulo === */
+.title-block {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center; /* centra p exactamente bajo el h1 */
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.title-block h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.title-block p {
+  margin: 4px 0 0 0;
+  font-size: 1.1rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+
+
+
+
+/* === Botones === */
+.open-report, .btn-group button {
+  padding: 10px 20px; /* Tamaño del botón */
+  margin-top: 20px; /* Separación superior */
+  background: rgba(255,255,255,0.2); /* Fondo translúcido */
+  border: none; /* Sin borde */
+  color: white; /* Texto blanco */
+  cursor: pointer; /* Cursor tipo mano */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: 0.3s; /* Animación suave */
+}
+
+.open-report:hover, .btn-group button:hover {
+  background: rgba(255,255,255,0.4); /* Aclarado al pasar el mouse */
+}
+
+/* === Reporte embebido === */
+.report-view iframe {
+  width: 90%; /* Ancho del iframe (90% del viewport) */
+  height: 80vh; /* Alto del iframe (80% del viewport) */
+  border-radius: 12px; /* Bordes redondeados */
+  margin-top: 20px; /* Separación superior */
+}
+/* === Ajustes para íconos de Font Awesome === */
+.menu i {
+  width: 25px;          /* Espacio reservado para el ícono */
+  font-size: 18px;      /* Tamaño de los íconos */
+  text-align: center;   /* Centra el ícono dentro del espacio */
+}
+
+/* Botón glass */
+.icon-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 130px;
+    height: 130px;
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
+    flex: 0 0 auto; /* evita que cambie su tamaño dentro del grid */
+}
+
+/* Contenedor que organiza los botones en filas/columnas con espaciado uniforme */
+.icon-button-grid {
+    position: absolute;
+    top: 200px;
+    left: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+    align-content: flex-start;
+}
+
+.icon-button:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Ícono */
+.icon-button .material-icons,
+.icon-button .material-symbols-outlined {
+    font-size: 42px;
+    color: #fff;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+/* Ajustes para Material Symbols (ej. money_bag, finance_mode) */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 42px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 48;
+}
+
+/* Texto */
+.icon-button span {
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+}
+
+.installed-capacity-report-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 80vh;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.05);
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 20px;
+}
