@@ -1,0 +1,86 @@
+body {
+  background: url('../img/background.jpeg') no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 20% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.report-container {
+  width: 90%;
+  max-width: 1200px;
+  height: 80vh;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.05);
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 20px;
+}
+
+.icon-home-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 25px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: transform 0.25s, background 0.25s, box-shadow 0.25s;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.icon-home-button:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.icon-home-button .material-icons {
+  font-size: 42px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.icon-home-button span {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.error {
+  font-size: 1rem;
+  opacity: 0.9;
+}
