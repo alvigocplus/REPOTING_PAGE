@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const grid = document.querySelector('[data-grid="finance"]');
+  const grid = document.querySelector('[data-grid="talent"]');
   const reports = Array.isArray(window.REPORTS_CONFIG)
-    ? window.REPORTS_CONFIG.filter(item => item.category === 'finance')
+    ? window.REPORTS_CONFIG.filter(item => item.category === 'talent')
     : [];
 
   if (!grid || reports.length === 0) {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   grid.innerHTML = '';
 
-  const symbolIcons = ['finance_mode', 'money_bag', 'money_range'];
+  const symbolIcons = ['finance_mode', 'money_bag', 'money_range', 'all_match', 'sentiment_very_satisfied'];
 
   reports.forEach(report => {
     const button = document.createElement('div');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       button.addEventListener('click', () => window.open(report.href, '_blank'));
     } else if (report.id) {
       button.addEventListener('click', () => {
-        window.location.href = `Reports/report_finance.html?id=${report.id}`;
+        window.location.href = `Reports/report_talent.html?id=${report.id}`;
       });
     }
 
